@@ -33,9 +33,9 @@ const cometData: Comet[] = [
 // Define fixed positions and sizes for planets (hardcoded x, y positions and sizes)
 const planetData: Planet[] = [
   { src: '/planets/1.png', top: '10vh', left: '6vw', size: 200 },
-  { src: '/planets/2.png', top: '20vh', left: '6vw', size: 150 },
-  { src: '/planets/3.png', top: '30vh', left: '45vw', size: 80 },
-  { src: '/planets/4.png', top: '40vh', left: '60vw', size: 90 },
+  { src: '/planets/2.png', top: '66vh', left: '-2vw', size: 150 },
+  { src: '/planets/3.png', top: '89vh', left: '45vw', size: 180 },
+  { src: '/planets/4.png', top: '88vh', left: '70vw', size: 120 },
   { src: '/planets/5.png', top: '50vh', left: '75vw', size: 100 },
   { src: '/planets/6.png', top: '60vh', left: '15vw', size: 110 },
   { src: '/planets/7.png', top: '70vh', left: '30vw', size: 120 },
@@ -50,33 +50,7 @@ const HeroSection = () => {
 
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <Image 
-          src="/orbits/outermost.png" 
-          alt="Outermost Orbit" 
-          layout="fill" 
-          objectFit="cover" 
-          priority 
-        />
-      </div>
-      <div className="absolute flex items-center justify-center">
-        <Image 
-          src="/orbits/penultimate.png" 
-          alt="Penultimate Orbit" 
-          width={600} // Increase width
-          height={600} // Increase height
-          priority 
-        />
-      </div>
-      <div className="absolute flex items-center justify-center">
-        <Image 
-          src="/orbits/innermost.png" 
-          alt="Innermost Orbit" 
-          width={300} 
-          height={300} 
-          priority 
-        />
-      </div>
+    
       {comets.map((comet, index) => (
         <div
           key={index}
