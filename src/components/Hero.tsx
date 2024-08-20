@@ -10,11 +10,40 @@ type Comet = {
   top: string;
   left: string;
   zIndex: number;
+  width: number;
+  height: number;
 };
+
+// Define the type for planet data
+type Planet = {
+  src: string;
+  top: string;
+  left: string;
+  size: number; // Use size instead of width and height
+};
+
+// Define fixed positions and sizes for planets (hardcoded x, y positions and sizes)
+const planetData: Planet[] = [
+  { src: '/planets/1.png', top: '10vh', left: '6vw', size: 200 },
+  { src: '/planets/2.png', top: '20vh', left: '30vw', size: 70 },
+  { src: '/planets/3.png', top: '30vh', left: '45vw', size: 80 },
+  { src: '/planets/4.png', top: '40vh', left: '60vw', size: 90 },
+  { src: '/planets/5.png', top: '50vh', left: '75vw', size: 100 },
+  { src: '/planets/6.png', top: '60vh', left: '15vw', size: 110 },
+  { src: '/planets/7.png', top: '70vh', left: '30vw', size: 120 },
+  { src: '/planets/8.png', top: '80vh', left: '45vw', size: 130 },
+  { src: '/planets/9.png', top: '90vh', left: '60vw', size: 140 },
+  { src: '/planets/10.png', top: '20vh', left: '75vw', size: 150 },
+];
 
 const getRandomPosition = () => ({
   top: `${Math.random() * 100}vh`,
   left: `${Math.random() * 100}vw`,
+});
+
+const getRandomSize = () => ({
+  width: Math.floor(Math.random() * 100) + 50,  // Random width between 50 and 150
+  height: Math.floor(Math.random() * 100) + 50, // Random height between 50 and 150
 });
 
 const HeroSection = () => {
@@ -25,6 +54,7 @@ const HeroSection = () => {
     const cometData: Comet[] = Array.from({ length: numComets }, (_, index) => ({
       src: `/comets/1.png`,
       ...getRandomPosition(),
+      ...getRandomSize(),
       zIndex: Math.floor(Math.random() * 10) + 1, // Random z-index between 1 and 10
     }));
     setComets(cometData);
@@ -72,8 +102,26 @@ const HeroSection = () => {
           <Image
             src={comet.src}
             alt={`Comet ${index + 1}`}
-            width={100}
-            height={100}
+            width={comet.width}
+            height={comet.height}
+            priority
+          />
+        </div>
+      ))}
+      {planetData.map((planet, index) => (
+        <div
+          key={index}
+          className="absolute"
+          style={{
+            top: planet.top,
+            left: planet.left,
+          }}
+        >
+          <Image
+            src={planet.src}
+            alt={`Planet ${index + 1}`}
+            width={planet.size}
+            height={planet.size}
             priority
           />
         </div>
