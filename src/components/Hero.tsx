@@ -2,7 +2,7 @@
 'use client'; // Add this at the top of the file
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // Define the type for comet data
 type Comet = {
@@ -38,7 +38,7 @@ const planetData: Planet[] = [
   { src: '/planets/4.png', top: '83vh', left: '72vw', size: 140 },
   { src: '/planets/5.png', top: '50vh', left: '85vw', size: 200 },
   { src: '/planets/6.png', top: '5vh', left: '80vw', size: 170 },
-  { src: '/planets/7.png',top: '22vh', left: '60vw', size: 40 },
+  { src: '/planets/7.png', top: '22vh', left: '60vw', size: 40 },
   { src: '/planets/8.png', top: '24vh', left: '35vw', size: 74 },
   { src: '/planets/9.png', top: '64vh', left: '54vw', size: 82 },
   { src: '/planets/10.png', top: '65vh', left: '35vw', size: 30 },
@@ -49,8 +49,26 @@ const HeroSection = () => {
   const [comets] = useState<Comet[]>(cometData);
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-    
+    <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Centered title images */}
+      <div className="absolute top-1/4 flex flex-col items-center">
+        <Image 
+          src="/hero-title/welcome.png" 
+          alt="Welcome Title" 
+          width={400} // Adjust width as needed
+          height={100} // Adjust height as needed
+          priority 
+        />
+        <Image 
+          src="/hero-title/nexis-console.png" 
+          alt="Nexis Console" 
+          width={300} // Adjust width as needed
+          height={75} // Adjust height as needed
+          priority 
+        />
+      </div>
+      
+      {/* Render comets */}
       {comets.map((comet, index) => (
         <div
           key={index}
@@ -70,6 +88,8 @@ const HeroSection = () => {
           />
         </div>
       ))}
+
+      {/* Render planets */}
       {planetData.map((planet, index) => (
         <div
           key={index}
