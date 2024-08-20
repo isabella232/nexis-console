@@ -38,7 +38,7 @@ const planetData: Planet[] = [
   { src: '/planets/4.png', top: '83vh', left: '72vw', size: 140 },
   { src: '/planets/5.png', top: '50vh', left: '85vw', size: 200 },
   { src: '/planets/6.png', top: '5vh', left: '80vw', size: 170 },
-  { src: '/planets/7.png', top: '70vh', left: '30vw', size: 120 },
+  { src: '/planets/7.png',top: '22vh', left: '60vw', size: 40 },
   { src: '/planets/8.png', top: '80vh', left: '45vw', size: 130 },
   { src: '/planets/9.png', top: '90vh', left: '60vw', size: 140 },
   { src: '/planets/10.png', top: '20vh', left: '75vw', size: 150 },
