@@ -40,8 +40,8 @@ const planetData: Planet[] = [
   { src: '/planets/6.png', top: '5vh', left: '80vw', size: 170 },
   { src: '/planets/7.png',top: '22vh', left: '60vw', size: 40 },
   { src: '/planets/8.png', top: '24vh', left: '35vw', size: 74 },
-  { src: '/planets/9.png', top: '90vh', left: '60vw', size: 140 },
-  { src: '/planets/10.png', top: '20vh', left: '75vw', size: 150 },
+  { src: '/planets/9.png', top: '64vh', left: '54vw', size: 82 },
+  { src: '/planets/10.png', top: '65vh', left: '35vw', size: 30 },
 ];
 
 const HeroSection = () => {
