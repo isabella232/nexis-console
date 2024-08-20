@@ -1,27 +1,24 @@
 // components/HeroSection.tsx
-'use client'; // Add this at the top of the file
+'use client';
 
 import Image from 'next/image';
 import { useState } from 'react';
 
-// Define the type for comet data
 type Comet = {
   src: string;
   top: string;
   left: string;
   zIndex: number;
-  size: number; // Use size instead of width and height
+  size: number;
 };
 
-// Define the type for planet data
 type Planet = {
   src: string;
   top: string;
   left: string;
-  size: number; // Use size instead of width and height
+  size: number;
 };
 
-// Define fixed positions and sizes for comets (hardcoded x, y positions and sizes)
 const cometData: Comet[] = [
   { src: '/comets/1.png', top: '10vh', left: '20vw', zIndex: 5, size: 60 },
   { src: '/comets/1.png', top: '30vh', left: '40vw', zIndex: 3, size: 80 },
@@ -30,7 +27,6 @@ const cometData: Comet[] = [
   { src: '/comets/1.png', top: '40vh', left: '10vw', zIndex: 6, size: 90 }
 ];
 
-// Define fixed positions and sizes for planets (hardcoded x, y positions and sizes)
 const planetData: Planet[] = [
   { src: '/planets/1.png', top: '17vh', left: '6vw', size: 200 },
   { src: '/planets/2.png', top: '66vh', left: '-2vw', size: 150 },
@@ -45,26 +41,25 @@ const planetData: Planet[] = [
 ];
 
 const getRandomAnimationClass = () => {
-  const animations = ['jiggle', 'jiggle-2', 'jiggle-3']; // Add more animation classes as needed
+  const animations = ['jiggle', 'jiggle-2', 'jiggle-3'];
   const randomIndex = Math.floor(Math.random() * animations.length);
   return animations[randomIndex];
 };
 
 const HeroSection = () => {
-  // Use hardcoded comet data
   const [comets] = useState<Comet[]>(cometData);
 
   return (
     <div className="relative w-full h-[120vh] flex flex-col items-center justify-center overflow-hidden">
-      {/* Centered title images with higher z-index */}
+      {/* Centered title images */}
       <div className="absolute inset-0 bg-gradient-radial from-black via-transparent to-transparent blur-lg"></div>
       <div className="absolute top-1/4 flex flex-col items-center z-20">
-        <div className="mb-2"> {/* Margin-bottom for spacing */}
+        <div className="mb-2">
           <Image 
             src="/hero-title/welcome.png" 
             alt="Welcome Title" 
-            width={600} // Increased width
-            height={150} // Increased height
+            width={600} 
+            height={150} 
             priority 
           />
         </div>
@@ -72,16 +67,16 @@ const HeroSection = () => {
           <Image 
             src="/hero-title/nexis-console.png" 
             alt="Nexis Console" 
-            width={600} // Increased width
-            height={150} // Increased height
+            width={600} 
+            height={150} 
             priority 
           />
         </div>
         <Image 
           src="/hero-title/desc.png" 
           alt="Nexis Console" 
-          width={500} // Increased width
-          height={150} // Increased height
+          width={500} 
+          height={150} 
           priority 
         />
       </div>
@@ -107,23 +102,36 @@ const HeroSection = () => {
         </div>
       ))}
 
-      {/* Render planets */}
+      {/* Render planets with hover effect */}
       {planetData.map((planet, index) => (
         <div
           key={index}
-          className={`absolute ${getRandomAnimationClass()}`} // Apply a random animation class
+          className={`absolute ${getRandomAnimationClass()} group`} // Added group for hover effect
           style={{
             top: planet.top,
             left: planet.left,
           }}
         >
-          <Image
-            src={planet.src}
-            alt={`Planet ${index + 1}`}
-            width={planet.size}
-            height={planet.size}
-            priority
-          />
+          <div className="relative">
+            {/* Blurred background on hover with lower z-index */}
+            <div
+              className="absolute inset-0 bg-cover bg-center blur-2xl opacity-0 group-hover:opacity-100 group-hover:z-10 transition-opacity duration-300"
+              style={{
+                backgroundImage: `url(${planet.src})`,
+                width: planet.size * 1.5,
+                height: planet.size * 1.5,
+                zIndex: -1, // Lower z-index for the blurred background
+              }}
+            ></div>
+            {/* Planet image */}
+            <Image
+              src={planet.src}
+              alt={`Planet ${index + 1}`}
+              width={planet.size}
+              height={planet.size}
+              priority
+            />
+          </div>
         </div>
       ))}
     </div>
