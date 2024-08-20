@@ -45,8 +45,8 @@ const HeroSection = () => {
         <Image 
           src="/orbits/penultimate.png" 
           alt="Penultimate Orbit" 
-          width={400} 
-          height={400} 
+          width={600} // Increase width
+          height={600} // Increase height
           priority 
         />
       </div>
