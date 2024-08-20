@@ -32,14 +32,14 @@ const cometData: Comet[] = [
 
 // Define fixed positions and sizes for planets (hardcoded x, y positions and sizes)
 const planetData: Planet[] = [
-  { src: '/planets/1.png', top: '10vh', left: '6vw', size: 200 },
+  { src: '/planets/1.png', top: '17vh', left: '6vw', size: 200 },
   { src: '/planets/2.png', top: '66vh', left: '-2vw', size: 150 },
   { src: '/planets/3.png', top: '89vh', left: '45vw', size: 180 },
   { src: '/planets/4.png', top: '83vh', left: '72vw', size: 140 },
   { src: '/planets/5.png', top: '50vh', left: '85vw', size: 200 },
   { src: '/planets/6.png', top: '5vh', left: '80vw', size: 170 },
   { src: '/planets/7.png',top: '22vh', left: '60vw', size: 40 },
-  { src: '/planets/8.png', top: '80vh', left: '45vw', size: 130 },
+  { src: '/planets/8.png', top: '24vh', left: '35vw', size: 74 },
   { src: '/planets/9.png', top: '90vh', left: '60vw', size: 140 },
   { src: '/planets/10.png', top: '20vh', left: '75vw', size: 150 },
 ];
