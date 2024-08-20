@@ -10,8 +10,7 @@ type Comet = {
   top: string;
   left: string;
   zIndex: number;
-  width: number;
-  height: number;
+  size: number; // Use size instead of width and height
 };
 
 // Define the type for planet data
@@ -22,10 +21,19 @@ type Planet = {
   size: number; // Use size instead of width and height
 };
 
+// Define fixed positions and sizes for comets (hardcoded x, y positions and sizes)
+const cometData: Comet[] = [
+  { src: '/comets/1.png', top: '10vh', left: '20vw', zIndex: 5, size: 60 },
+  { src: '/comets/1.png', top: '30vh', left: '40vw', zIndex: 3, size: 80 },
+  { src: '/comets/1.png', top: '50vh', left: '60vw', zIndex: 7, size: 100 },
+  { src: '/comets/1.png', top: '20vh', left: '80vw', zIndex: 4, size: 70 },
+  { src: '/comets/1.png', top: '40vh', left: '10vw', zIndex: 6, size: 90 }
+];
+
 // Define fixed positions and sizes for planets (hardcoded x, y positions and sizes)
 const planetData: Planet[] = [
   { src: '/planets/1.png', top: '10vh', left: '6vw', size: 200 },
-  { src: '/planets/2.png', top: '20vh', left: '30vw', size: 70 },
+  { src: '/planets/2.png', top: '20vh', left: '6vw', size: 150 },
   { src: '/planets/3.png', top: '30vh', left: '45vw', size: 80 },
   { src: '/planets/4.png', top: '40vh', left: '60vw', size: 90 },
   { src: '/planets/5.png', top: '50vh', left: '75vw', size: 100 },
@@ -36,29 +44,9 @@ const planetData: Planet[] = [
   { src: '/planets/10.png', top: '20vh', left: '75vw', size: 150 },
 ];
 
-const getRandomPosition = () => ({
-  top: `${Math.random() * 100}vh`,
-  left: `${Math.random() * 100}vw`,
-});
-
-const getRandomSize = () => ({
-  width: Math.floor(Math.random() * 100) + 50,  // Random width between 50 and 150
-  height: Math.floor(Math.random() * 100) + 50, // Random height between 50 and 150
-});
-
 const HeroSection = () => {
-  const [comets, setComets] = useState<Comet[]>([]);
-
-  useEffect(() => {
-    const numComets = 9;
-    const cometData: Comet[] = Array.from({ length: numComets }, (_, index) => ({
-      src: `/comets/1.png`,
-      ...getRandomPosition(),
-      ...getRandomSize(),
-      zIndex: Math.floor(Math.random() * 10) + 1, // Random z-index between 1 and 10
-    }));
-    setComets(cometData);
-  }, []);
+  // Use hardcoded comet data
+  const [comets] = useState<Comet[]>(cometData);
 
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
@@ -102,8 +90,8 @@ const HeroSection = () => {
           <Image
             src={comet.src}
             alt={`Comet ${index + 1}`}
-            width={comet.width}
-            height={comet.height}
+            width={comet.size}
+            height={comet.size}
             priority
           />
         </div>
