@@ -50,20 +50,20 @@ const HeroSection = () => {
 
   return (
     <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Centered title images */}
-      <div className="absolute top-1/4 flex flex-col items-center">
+      {/* Centered title images with higher z-index */}
+      <div className="absolute top-1/4 flex flex-col items-center z-20">
         <Image 
           src="/hero-title/welcome.png" 
           alt="Welcome Title" 
-          width={400} // Adjust width as needed
-          height={100} // Adjust height as needed
+          width={600} // Increased width
+          height={150} // Increased height
           priority 
         />
         <Image 
           src="/hero-title/nexis-console.png" 
           alt="Nexis Console" 
-          width={300} // Adjust width as needed
-          height={75} // Adjust height as needed
+          width={600} // Increased width
+          height={150} // Increased height
           priority 
         />
       </div>
