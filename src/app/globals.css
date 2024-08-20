@@ -6,3 +6,44 @@ body{
   background: #131313;
   color: white;
 }
+/* styles/globals.css or styles/HeroSection.module.css */
+@keyframes jiggle1 {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(8px, -8px); }
+  40% { transform: translate(-10px, 10px); }
+  60% { transform: translate(12px, -12px); }
+  80% { transform: translate(-8px, 8px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes jiggle2 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-6px, 6px); }
+  50% { transform: translate(10px, -10px); }
+  75% { transform: translate(-8px, 8px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes jiggle3 {
+  0% { transform: translate(0, 0); }
+  15% { transform: translate(4px, 8px); }
+  30% { transform: translate(-6px, -4px); }
+  45% { transform: translate(8px, 2px); }
+  60% { transform: translate(-4px, -8px); }
+  75% { transform: translate(6px, 6px); }
+  90% { transform: translate(-2px, 4px); }
+  100% { transform: translate(0, 0); }
+}
+
+.jiggle {
+  animation: jiggle1 14s infinite;
+}
+
+.jiggle-2 {
+  animation: jiggle2 14s infinite;
+}
+
+.jiggle-3 {
+  animation: jiggle3 14s infinite;
+}
+

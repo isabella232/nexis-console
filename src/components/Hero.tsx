@@ -44,6 +44,12 @@ const planetData: Planet[] = [
   { src: '/planets/10.png', top: '65vh', left: '35vw', size: 30 },
 ];
 
+const getRandomAnimationClass = () => {
+  const animations = ['jiggle', 'jiggle-2', 'jiggle-3']; // Add more animation classes as needed
+  const randomIndex = Math.floor(Math.random() * animations.length);
+  return animations[randomIndex];
+};
+
 const HeroSection = () => {
   // Use hardcoded comet data
   const [comets] = useState<Comet[]>(cometData);
@@ -51,34 +57,34 @@ const HeroSection = () => {
   return (
     <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Centered title images with higher z-index */}
-  <div className="absolute inset-0 bg-gradient-radial from-black via-transparent to-transparent blur-lg"></div>
-  <div className="absolute top-1/4 flex flex-col items-center z-20">
-    <div className="mb-2"> {/* Margin-bottom for spacing */}
-      <Image 
-        src="/hero-title/welcome.png" 
-        alt="Welcome Title" 
-        width={600} // Increased width
-        height={150} // Increased height
-        priority 
-      />
-    </div>
-    <div className="mb-4">
-    <Image 
-      src="/hero-title/nexis-console.png" 
-      alt="Nexis Console" 
-      width={600} // Increased width
-      height={150} // Increased height
-      priority 
-    />
-    </div>
-    <Image 
-      src="/hero-title/desc.png" 
-      alt="Nexis Console" 
-      width={500} // Increased width
-      height={150} // Increased height
-      priority 
-    />
-  </div>
+      <div className="absolute inset-0 bg-gradient-radial from-black via-transparent to-transparent blur-lg"></div>
+      <div className="absolute top-1/4 flex flex-col items-center z-20">
+        <div className="mb-2"> {/* Margin-bottom for spacing */}
+          <Image 
+            src="/hero-title/welcome.png" 
+            alt="Welcome Title" 
+            width={600} // Increased width
+            height={150} // Increased height
+            priority 
+          />
+        </div>
+        <div className="mb-4">
+          <Image 
+            src="/hero-title/nexis-console.png" 
+            alt="Nexis Console" 
+            width={600} // Increased width
+            height={150} // Increased height
+            priority 
+          />
+        </div>
+        <Image 
+          src="/hero-title/desc.png" 
+          alt="Nexis Console" 
+          width={500} // Increased width
+          height={150} // Increased height
+          priority 
+        />
+      </div>
 
       {/* Render comets */}
       {comets.map((comet, index) => (
@@ -105,7 +111,7 @@ const HeroSection = () => {
       {planetData.map((planet, index) => (
         <div
           key={index}
-          className="absolute"
+          className={`absolute ${getRandomAnimationClass()}`} // Apply a random animation class
           style={{
             top: planet.top,
             left: planet.left,
