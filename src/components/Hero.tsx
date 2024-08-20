@@ -55,7 +55,7 @@ const HeroSection = () => {
   const [comets] = useState<Comet[]>(cometData);
 
   return (
-    <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+    <div className="relative w-full h-[120vh] flex flex-col items-center justify-center overflow-hidden">
       {/* Centered title images with higher z-index */}
       <div className="absolute inset-0 bg-gradient-radial from-black via-transparent to-transparent blur-lg"></div>
       <div className="absolute top-1/4 flex flex-col items-center z-20">
