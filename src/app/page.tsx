@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import HeroSection from '@/components/Hero'
 import HeroCards from '@/components/HeroCards'
 import Nav from '@/components/Nav'
@@ -9,6 +10,7 @@ function Home() {
     <Nav/>
     <HeroSection/>
     <HeroCards/>
+    <Footer/>
     </>
   )
 }
