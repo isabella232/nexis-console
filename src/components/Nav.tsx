@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 
 function Nav() {
     const navItems = [
@@ -23,12 +24,12 @@ function Nav() {
 
             <div className="flex-1 flex justify-center space-x-8">
                 {navItems.map((val) => (
-                    <a 
+                    <Link 
                         key={val.name} 
                         href={val.route} 
                         className="text-lg font-medium hover:text-blue-600">
                         {val.name}
-                    </a>
+                    </Link>
                 ))}
             </div>
 
