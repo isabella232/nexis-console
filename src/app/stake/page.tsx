@@ -48,7 +48,7 @@ const StakePage = () => {
                   Estimated Earnings
                 </div>
               </div>
-              <div className='bg-[#191919] grid grid-cols-2 gap-4 p-4 rounded-3xl px-8 py-2 my-4 w-[100%] mt-[4px]'>
+              <div className='bg-[#191919] grid grid-cols-2 gap-4 p-4 rounded-3xl px-8 py-2 my-4 w-[100%] mt-[8px]'>
                 <div className='py-4'>
                   <div className='opacity-25'>
                     0 $ / day
