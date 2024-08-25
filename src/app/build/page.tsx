@@ -1,12 +1,11 @@
-// /src/app/build/page.js
-
 import React from 'react';
 
 const BuildPage = () => {
   return (
     <div>
-      <h1>Build Page</h1>
-      <p>This is the build page of the project.</p>
+      <img src="/bg/tl.png" className='absolute top-0 left-0' alt="" />
+      <img src="/bg/br.png" className='absolute right-0' alt="" />
+      <img src="/bg/stakeNzt.png" className='absolute' alt="" />
     </div>
   );
 };
