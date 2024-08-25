@@ -47,3 +47,12 @@ body{
   animation: jiggle3 14s infinite;
 }
 
+.stake-container{
+  background: rgba(24, 24, 24, 0.525);
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 2rem;
+  border: 1px solid #545454;
+  height: 80vh;
+  width: 40vw;
+}
