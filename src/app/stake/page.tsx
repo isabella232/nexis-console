@@ -79,6 +79,12 @@ const StakePage = () => {
               </div>
 
             </div>
+
+            <div className='bg-[#282828] flex items-center justify-center flex-col p-4 rounded-xl px-8 h-14 py-2 my-2 hover:bg-[#C7FF02] cursor-pointer hover:opacity-100 hover:text-black '>
+              <div className='text-xl font-semibold opacity-40 '>
+              Connect Wallet
+              </div>
+            </div>
           </div>
         </div>
       </div>
