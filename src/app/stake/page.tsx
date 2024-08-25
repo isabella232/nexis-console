@@ -32,7 +32,11 @@ const StakePage = () => {
       </div>
 
       <div className='flex justify-center flex-col text-right'>
-        <div className='text-3xl font-semibold'>0</div>
+      <input
+          type="text"
+          className="text-3xl font-semibold bg-transparent border-none outline-none text-right w-24"
+          placeholder="0"
+        />
         <div className='text-lg opacity-35'>~ 0.00 $</div>
       </div>
     </div>
