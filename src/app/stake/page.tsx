@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BuildPage = () => {
+const StakePage = () => {
   return (
     <> 
       <img src="/bg/tl.png" className="absolute top-0 left-0 z-0  w-[80vw] h-[90vh]" alt="Top Left" />
@@ -8,8 +8,8 @@ const BuildPage = () => {
       <img src="/bg/br.png" className="absolute bottom-0 right-0 z-0 w-[80vw] h-[90vh]" alt="Bottom Right" />
       <div className="relative z-10 flex items-center justify-center min-h-screen">
       <img src="/bg/stakeNzt.png" className='absolute top-[10vh]' alt="" />
-      <div className='stake-container absolute top-[5vh] flex p-4'>
-        <div>Stake</div>
+      <div className='stake-container absolute top-[5vh] flex p-4 justify-center'>
+        <img src="/stake-page/stake-title.png" alt="" className='h-8 my-2'/>
       </div>
       </div>
     </div>
@@ -17,4 +17,4 @@ const BuildPage = () => {
   );
 };
 
-export default BuildPage;
+export default StakePage;
