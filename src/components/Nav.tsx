@@ -34,7 +34,7 @@ function Nav() {
             </div>
 
             <div className='flex-1 flex justify-end'>
-                <button className="bg-blue-600 px-4 py-2 rounded-lg text-white hover:bg-blue-700">
+                <button className="bg-[#C7FF02] px-4 py-2 rounded-lg text-black font-semibold hover:bg-[#d3fc3e]">
                     Connect Wallet
                 </button>
             </div>
