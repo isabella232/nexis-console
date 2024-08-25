@@ -55,4 +55,6 @@ body{
   border: 1px solid #545454;
   height: 80vh;
   width: 40vw;
+  max-width: 690px;
+  max-height: 720px;
 }
